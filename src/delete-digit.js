@@ -30,4 +30,4 @@ module.exports = {
 };
 
 // console.log(module.exports.deleteDigit(1352))
-console.log(module.exports.deleteDigit(1001))
+// console.log(module.exports.deleteDigit(1001))
