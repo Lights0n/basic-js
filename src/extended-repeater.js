@@ -105,6 +105,6 @@ module.exports = {
 
 // console.log(module.exports.repeater('la', { repeatTimes: 3, separator: 's', addition: '+', additionRepeatTimes: 1 }));
 
-console.log(module.exports.repeater(('REPEATABLE_STRING', { repeatTimes: 2, addition: 'ADDITION', additionRepeatTimes: 3 })))
+// console.log(module.exports.repeater(('REPEATABLE_STRING', { repeatTimes: 2, addition: 'ADDITION', additionRepeatTimes: 3 })))
 
 // 'STRING_OR_DEFAULTSTRING_OR_DEFAULT+STRING_OR_DEFAULTSTRING_OR_DEFAULT'
