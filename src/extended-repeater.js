@@ -26,7 +26,8 @@ function repeater(str, options2) {
   // }
 
   if (str == null) { el = 'null' }
-  else { el = str.toString() }
+  // else { el = str.toString() }
+  else { el = String(str) }
 
   for (let i = 0; i < Object.values(options2).length; i++ ){
     if (Object.values(options2)[i] == null){
@@ -43,14 +44,16 @@ function repeater(str, options2) {
   
   if (options.addition != undefined) {
     let additionRepeatTimes = 1
-    let additionSeparator = ''
+    let additionSeparator = '|'
     let additTail = []
     //  если есть доп повторения
     if (options.additionRepeatTimes > 1) {
       additionRepeatTimes = options.additionRepeatTimes
     }
+    
     for (let i = 0; i < additionRepeatTimes; i++) {
-      additTail.push(options.addition.toString())
+      // additTail.push(options.addition.toString())
+      additTail.push(String(options.addition))
 
     }
     // если есть дополнительный разделитель
@@ -58,14 +61,18 @@ function repeater(str, options2) {
       // console.log(options.additionSeparator);
       additionSeparator = options.additionSeparator
 
-      // console.log('_____', additTail);
       for (let index = 0; index < additTail.length - 1; index++) {
         additTail[index] = additTail[index] + additionSeparator;
-
       }
       additTail = additTail.join('')
-      // console.log(additTail, '___');
     }
+    else if (!options.additionSeparator){
+      for (let index = 0; index < additTail.length - 1; index++) {
+        additTail[index] = additTail[index] + additionSeparator;
+      }
+      additTail = additTail.join('')
+    }
+
 
     // состыковываем тему
 
@@ -86,9 +93,10 @@ function repeater(str, options2) {
   // separator
   if (options.separator) {
     res = res.join(`${options.separator}`)
-  }else if (!options.hasOwnProperty(separator)){
-    res = res.join('')
   }
+  // else if (!options.hasOwnProperty(separator)){
+  //   res = res.join('')
+  // }
   else {
     res = res.join('+')
   }
