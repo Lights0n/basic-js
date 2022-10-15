@@ -15,8 +15,7 @@ const { NotImplementedError } = require('../extensions/index.js');
  *
  */
 function isMAC48Address(address) {
-  // console.log(parseInt('f', 16), '_ga?');
-  // console.log((15).toString(16), '_ga?');
+
   let res
   address = address.toLowerCase()
   res = parseInt(address.split('-')[0], 16);
@@ -28,12 +27,11 @@ function isMAC48Address(address) {
       return true
     }
     else{
-      // console.log(el);
-      // console.log((parseInt(el, 16)).toString(16));
+
       return false
     }
   })
-  // console.log(ans, ' yess?');
+
   return ans
 
 }
