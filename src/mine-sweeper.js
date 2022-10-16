@@ -73,7 +73,6 @@ function minesweeper(matrix) {
         if (res[coords.left] != undefined) {
           res[i][coords.left] += 1
         }
-
       }
 
     }
@@ -85,8 +84,4 @@ function minesweeper(matrix) {
 module.exports = {
   minesweeper
 };
-// console.log(module.exports.minesweeper([
-//   [true, false, false],
-//   [false, true, false],
-//   [false, false, false]
-// ]));
+
