@@ -16,14 +16,18 @@ function getSumOfDigits(n) {
   let ans = 0
 
   function rec(n) {
-    if (n.toString().length > 1) {
-      console.log(n.toString().length);
+    if (n.toString().length == 1) {
 
-      // ans = [...n.toString()].reduce((sum, el) => { return sum + +el }, ans)
-     return rec(ans)
+      return n
     }
     else {
-      return ans
+      let newN = []
+      for (let item of [...n.toString()]){
+        newN.push(+item)
+      }
+      newN = newN.reduce((sum, el)=>{ return sum + el}, 0)
+      // console.log(newN);
+      return rec(newN)
     }
 
 
@@ -36,3 +40,4 @@ module.exports = {
   getSumOfDigits
 };
 
+// console.log(module.exports.getSumOfDigits(999))
